@@ -1,0 +1,25 @@
+{
+  "name": "wasm-types",
+  "version": "1.0.0",
+  "description": "WebAssembly types",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ballercat/wasm-types.git"
+  },
+  "keywords": [
+    "wasm",
+    "web",
+    "assembly",
+    "javascript"
+  ],
+  "author": "Arthur Buldauskas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ballercat/wasm-types/issues"
+  },
+  "homepage": "https://github.com/ballercat/wasm-types#readme"
+}

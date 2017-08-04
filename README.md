@@ -2,6 +2,10 @@
 
 Type definitions of wasm types and some C types for use in JavaScript.
 
+```
+npm install wasm-types
+```
+
 ## Types
 
 ```javascript
