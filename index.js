@@ -85,7 +85,6 @@ const set = (type, index, dataView, value) => {
 }
 
 module.exports = {
-  define,
   i32,
   i64,
   f32,
