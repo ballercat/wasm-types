@@ -99,6 +99,7 @@ module.exports = {
   u32,
   u64,
   set,
-  get
+  get,
+  sizeof
 }
 
