@@ -6,26 +6,52 @@ Type definitions of wasm types and some C types for use in JavaScript.
 npm install wasm-types
 ```
 
-## Types
+## 'Native' WebAssembly Types
 
 ```javascript
-const i32 = 1;
-const i64 = 1 << 1;
-const f32 = 1 << 2;
-const f64 = 1 << 3;
-const anyfunc = 1 << 4;
-const func = 1 << 5;
-const block_type = 1 << 6;
+// Number types
+i32, i64, f32, f64
 ```
-## C type mappings
+
+Extras. You _should_ be able to pass around anyfunc in WebAssembly, not sure about the other two but they are there if you need it.
+```
+anyfunc
+func
+block_type
+```
+## Utility sizes
+
+The following types are of sizes you can load/set in WebAssembly but are not **types**. _See https://github.com/WebAssembly/spec/tree/master/interpreter#s-expression-syntax_
+```
+i8, u8, i16, u16, u32
+// u64 is special
+u64
+```
+
+`u64` is not something you can set read in raw WebAssembly but something you can set into memory from JavaScript
+
+## sizeof
+
+This module also exports a `sizeof` lookup Object for convenience.
 
 ```javascript
-const i8 = 1 << 7;
-const u8 = 1 << 8;
-const i16 = 1 << 9;
-const u16 = 1 << 10;
-const u32 = 1 << 11;
-const u64 = 1 << 12;
+// In _bytes_
+const word = 4;
+
+const sizeof = {
+  [i32]: word,
+  [i64]: word * 2,
+  [f32]: word,
+  [f64]: word * 2,
+  [u32]: word,
+  [u16]: word >> 1,
+  [u8]: word >> 2,
+  [i8]: word >> 2,
+  [i16]: word >> 1,
+  [anyfunc]: word,
+  [func]: word,
+  [block_type]: word
+};
 ```
 
 ## Helpers API

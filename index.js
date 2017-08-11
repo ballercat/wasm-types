@@ -26,6 +26,7 @@ const u16 = 1 << 10;
 const u32 = 1 << 11;
 const u64 = 1 << 12;
 
+// In _bytes_
 const word = 4;
 
 const sizeof = {
